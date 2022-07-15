@@ -1,0 +1,2 @@
+[textx_languages]
+domain_lang = cobrijani:domain_lang_language

@@ -1,0 +1,13 @@
+LICENSE
+README.md
+setup.cfg
+setup.py
+domain_generator/__init__.py
+domain_generator/generators.py
+java_gen.egg-info/PKG-INFO
+java_gen.egg-info/SOURCES.txt
+java_gen.egg-info/dependency_links.txt
+java_gen.egg-info/entry_points.txt
+java_gen.egg-info/not-zip-safe
+java_gen.egg-info/requires.txt
+java_gen.egg-info/top_level.txt

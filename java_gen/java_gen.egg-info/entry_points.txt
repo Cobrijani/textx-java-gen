@@ -1,0 +1,2 @@
+[textx_generators]
+domain_generator = domain_generator.generators:gen_def
