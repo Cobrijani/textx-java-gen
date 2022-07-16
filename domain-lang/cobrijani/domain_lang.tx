@@ -10,18 +10,40 @@ EntityModel:
 Entity:
     'entity' name=ID '{'
         properties+=Property // Each entity has one or more properties.
+
+        relationships*=Relationship
     '}'
 ;
 
+Relationship:
+    name=ID '->' ent=[Entity] card=Cardinality
+;
+
+OneToOne:
+  '[1]'| ''
+;
+OneToOneNil:
+  '[0..1]'
+;
+OneToMany:
+  '[0..n]'
+;
+ManyToOne:
+  '[n..0]'
+;
+Cardinality:
+    OneToOneNil | OneToMany | ManyToOne | OneToOne
+;
+
 Property:
-    name=ID ':' type=[Type]     // type is a reference to Type instance.
+    name=ID ':' type=[PropertyType]
+                                // type is a reference to Type instance.
                                 // There are two built-in simple types
                                 // registered on meta-model in entity_test.py
 ;
-
 // Type can be SimpleType or Entity
-Type:
-    SimpleType | Entity
+PropertyType:
+    SimpleType
 ;
 
 SimpleType:

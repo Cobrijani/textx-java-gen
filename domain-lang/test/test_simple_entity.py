@@ -1,8 +1,7 @@
 from __future__ import unicode_literals
 import os
 import pytest
-from textx import (TextXSemanticError, TextXSyntaxError,
-                   metamodel_for_language,
+from textx import (metamodel_for_language,
                    clear_language_registrations)
 
 current_dir = os.path.dirname(__file__)
@@ -23,3 +22,14 @@ def test_simple_entities(clear_all):
                                              'simple_entities.mdl'))
     assert(model is not None)
     assert(len(model.entities) == 2)
+    
+def test_cardinality(clear_all):
+    """
+    Testing cardinality entities
+    """
+    mmF = metamodel_for_language('domain_lang')
+    model = mmF.model_from_file(os.path.join(current_dir,
+                                             'models',
+                                             'entity_cardinality.mdl'), debug=False)
+    assert(model is not None)
+    assert(len(model.entities) == 6)
