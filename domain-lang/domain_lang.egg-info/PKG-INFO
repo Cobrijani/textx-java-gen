@@ -7,7 +7,6 @@ Author: Stefan Bratic
 Author-email: cobrijani@gmail.com
 License: MIT
 Keywords: textX
-Platform: UNKNOWN
 Classifier: Development Status :: 2 - Pre-Alpha
 Classifier: Intended Audience :: Developers
 Classifier: Intended Audience :: Information Technology
@@ -37,4 +36,3 @@ Language for defining application model
 # Credits
 
 Initial project layout generated with `textx startproject`.
-

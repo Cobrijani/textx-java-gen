@@ -11,3 +11,4 @@ domain_lang.egg-info/entry_points.txt
 domain_lang.egg-info/not-zip-safe
 domain_lang.egg-info/requires.txt
 domain_lang.egg-info/top_level.txt
+test/test_simple_entity.py

@@ -1,4 +1,3 @@
-
 from textx import GeneratorDesc
 import os
 import jinja2
@@ -9,7 +8,6 @@ def codegen_java_pu(metamodel, model, output_path, overwrite, debug=False,
     """
     Generate java code
     """
-
     jinja_env = jinja2.Environment(
         loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
         trim_blocks=True,
