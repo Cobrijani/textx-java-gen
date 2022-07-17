@@ -2,9 +2,10 @@
   Entity DSL grammar.
 */
 EntityModel:
-    types*=SimpleType       // At the beginning of model we can define
+    types*=SimpleType
+           // At the beginning of model we can define
                             // zero or more simple types.
-    entities+=Entity        // Each model has one or more entities.
+    (entities*=Entity| enums*=Enum | data_types*=DataType)#        // Each model has one or more entities.
 ;
 
 Entity:
@@ -43,12 +44,28 @@ Property:
 ;
 // Type can be SimpleType or Entity
 PropertyType:
-    SimpleType
+    SimpleType | Enum
 ;
+
+Enum: 
+    'enum' name=ID '{'
+        values+=EnumValue[',']
+    '}'
+;
+
+EnumValue:
+    value=ID;
 
 SimpleType:
     'type' name=ID
 ;
+
+DataType:
+    'datatype' name=ID '{'
+        properties+=Property
+    '}'
+;
+
 
 // Special rule for comments. Comments start with //
 Comment:

@@ -1,0 +1,17 @@
+datatype Address {
+    street: string
+    number: integer
+}
+
+datatype Address2 {
+    street: string
+    number: integer
+    type: AddressType
+}
+
+enum AddressType {
+    TYPE,
+    TYPE_2
+}
+
+

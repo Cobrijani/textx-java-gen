@@ -1,0 +1,9 @@
+enum ProductType {
+    IMPORT,
+    EXPORT
+}
+
+entity Product {
+    name: string
+    type: ProductType
+}
