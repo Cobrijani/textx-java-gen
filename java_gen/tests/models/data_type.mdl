@@ -1,0 +1,19 @@
+datatype Address {
+    street: string
+    number: integer
+    type: AddressType
+    country: Country
+}
+
+datatype Country {
+    isoCode: string
+    name: string
+    
+}
+
+enum AddressType {
+    TYPE,
+    TYPE_2
+}
+
+

@@ -1,4 +1,5 @@
 textX
+jinja2
 
 [dev]
 wheel
@@ -10,3 +11,4 @@ tox
 coverage
 coveralls
 pytest
+click

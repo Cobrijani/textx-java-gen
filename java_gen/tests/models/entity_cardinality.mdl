@@ -1,0 +1,29 @@
+entity ProductItem {
+    itemName: string
+}
+entity OneToOneCardinality{
+    id: integer
+    name : string
+    productItems -> ProductItem[1]
+}
+entity OneToManyCardinality{
+    id: integer
+    name : string
+    productItems -> ProductItem [0..n]
+}
+entity OneToOneNullableCardinality{
+    id: integer
+    name : string
+    productItems -> ProductItem
+}
+entity OneToOneNullable2Cardinality{
+    id: integer
+    name : string
+    productItems -> ProductItem [0..1]
+}
+entity ManyToOneNullableCardinality{
+    id: integer
+    name : string
+    productItems -> ProductItem [n..0]
+}
+

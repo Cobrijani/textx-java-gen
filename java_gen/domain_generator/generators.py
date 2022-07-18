@@ -1,15 +1,17 @@
 from textx import GeneratorDesc
 import os
 import jinja2
-
+import sys
 
 def codegen_java_pu(metamodel, model, output_path, overwrite, debug=False,
                     **custom_args):
     """
     Generate java code
     """
+    current_dir = os.path.dirname(__file__)
+        
     jinja_env = jinja2.Environment(
-        loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
+        loader=jinja2.FileSystemLoader(current_dir),
         trim_blocks=True,
         lstrip_blocks=True)
 
@@ -26,6 +28,11 @@ def codegen_java_pu(metamodel, model, output_path, overwrite, debug=False,
 
     # Load Java template
     template = jinja_env.get_template('entity_java.template')
+    
+    if not os.path.exists(output_path):
+        print(output_path + " does not exist")
+        sys.exit(1)
+        return
 
     for entity in model.entities:
         with open(os.path.join(output_path,
