@@ -4,7 +4,7 @@ entity ProductItem {
 entity OneToOneCardinality{
     id: integer
     name : string
-    productItems -> ProductItem[1]
+    productItem -> ProductItem[1]
 }
 entity OneToManyCardinality{
     id: integer
@@ -14,16 +14,16 @@ entity OneToManyCardinality{
 entity OneToOneNullableCardinality{
     id: integer
     name : string
-    productItems -> ProductItem
+    productItem -> ProductItem
 }
 entity OneToOneNullable2Cardinality{
     id: integer
     name : string
-    productItems -> ProductItem [0..1]
+    productItem -> ProductItem [0..1]
 }
 entity ManyToOneNullableCardinality{
     id: integer
     name : string
-    productItems -> ProductItem [n..0]
+    productItem -> ProductItem [n..0]
 }
 
